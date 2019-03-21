@@ -78,7 +78,7 @@ function insertConsoleLog (type) {
   const sss = '%s '.repeat(selectedText.split(/\S\s*,\s*\S/g).length).trim()
   // console.log(selectedText.split(/\S\s*,\s*\S/g).length, selectedText.split(/\S\s*,\s*\S/g), sss)
   let insertText = type === 'primitive' ? `\n${spaceee}console.log('%c${sss}', 'color: ${newColor()}', ${selectedText});`
-    : `\n${spaceee}console.log('%c⧭', 'color: ${newColor()}', ${selectedText});`
+    : `\n${spaceee}console.log('%c⧭ ${selectedText}', 'color: ${newColor()}', {${selectedText}});`
   // console.log(document.languageId === 'vue')
   // console.log(insertText)
   if (document.languageId === 'vue') insertText = insertText.slice(0, -1)
